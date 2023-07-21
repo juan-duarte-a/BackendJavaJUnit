@@ -7,8 +7,8 @@ import static backendjavajunit.ej02.TemperatureConverter.Units;
 
 public class TemperatureConverterTest {
     
-    static TemperatureConverter tc;
-    static double temperature;
+    private static TemperatureConverter tc;
+    private static double temperature;
     
     @BeforeClass
     public static void setUpClass() {

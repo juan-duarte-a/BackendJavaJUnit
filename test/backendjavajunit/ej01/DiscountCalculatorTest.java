@@ -6,8 +6,8 @@ import static org.junit.Assert.*;
 
 public class DiscountCalculatorTest {
 
-    static Product product;
-    static DiscountCalculator discountCalculator;
+    private static Product product;
+    private static DiscountCalculator discountCalculator;
     
     @BeforeClass
     public static void setUpClass() {

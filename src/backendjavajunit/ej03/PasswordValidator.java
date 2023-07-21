@@ -11,12 +11,19 @@ public class PasswordValidator {
     public boolean hasSpecialCharacters(String password) {
         return !password.chars().noneMatch(c -> 
                 !Character.isLetterOrDigit(c)
-                && !Character.isWhitespace(c)
-        );
+                && !Character.isWhitespace(c));
     }
     
     public boolean hasLowerCaseLetter(String password) {
         return !password.chars().noneMatch(Character::isLowerCase);
+    }
+    
+    public boolean hasUpperCaseLetter(String password) {
+        return !password.chars().noneMatch(Character::isUpperCase);
+    }
+    
+    public boolean hasNumericValue(String password) {
+        return !password.chars().noneMatch(Character::isDigit);
     }
     
 }
