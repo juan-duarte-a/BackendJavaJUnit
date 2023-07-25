@@ -1,14 +1,15 @@
 package backendjavajunit.ej04;
 
+import java.util.Objects;
+
 public class Task {
     
-    private static long idCount = 1001;
     private final long id;
     private String name;
     private String description;
 
-    public Task(String name, String description) {
-        this.id = idCount++;
+    public Task(long id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }
@@ -36,6 +37,23 @@ public class Task {
     @Override
     public String toString() {
         return id + ". " + name + ". " + description;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Task))
+            return false;
+        
+        return o.hashCode() == this.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.description);
+        return hash;
     }
     
 }

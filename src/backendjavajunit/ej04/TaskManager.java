@@ -13,6 +13,7 @@ public class TaskManager {
     
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
+        taskManager.listTaks();
     }
     
     public void listTaks() {
@@ -26,14 +27,12 @@ public class TaskManager {
         return tasks;
     }
     
-    public void addInitialTasks() {
-        tasks.add(new Task("Study Java", "Don't be lazy and write some code. Reading is not enough."));
-        tasks.add(new Task("Work out", "Spend one hour exercising and try not to complain while doing it."));
-        tasks.add(new Task("Walk the dog", "Take Firulais to the park and do not forget to collect his 'things'."));
+    public void addTask(long id, String name, String description) {
+        tasks.add(new Task(id, name, description));
     }
     
     public boolean removeTask(long id) {
-        return tasks.removeIf((t) -> t.getId() == id);
+        return tasks.removeIf(t -> t.getId() == id);
     }
     
 }
