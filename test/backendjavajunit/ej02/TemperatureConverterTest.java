@@ -61,4 +61,19 @@ public class TemperatureConverterTest {
         assertEquals(-279.67, tc.calculateFahrenheit(temperature, Units.Kelvin), 0.01);
     }
     
+    @Test
+    public void testCalculateCelsiusToKelvinInvalidTemperature() {
+        assertEquals(TemperatureConverter.MIN_KELVIN_TEMP, tc.calculateKelvin(-300, Units.Celsius), 0);
+    }
+    
+    @Test
+    public void testCalculateKelvinToFahrenheitInvalidTemperature() {
+        assertEquals(TemperatureConverter.MIN_FAHRENHEIT_TEMP, tc.calculateFahrenheit(-3, Units.Kelvin), 0);
+    }
+    
+    @Test
+    public void testCalculateFahrenheitToCelsiusInvalidTemperature() {
+        assertEquals(TemperatureConverter.MIN_CELSIUS_TEMP, tc.calculateCelsius(-460, Units.Fahrenheit), 0);
+    }
+    
 }

@@ -12,9 +12,10 @@ public class TemperatureConverter {
         
         switch (units) {
             case Fahrenheit:
-                return (temperature - 32) * 5/9;
+                celsiusTemp = (temperature - 32) * 5/9;
+                break;
             case Kelvin:
-                return temperature - 273.15;
+                celsiusTemp = temperature - 273.15;
         }
         
         return Double.max(MIN_CELSIUS_TEMP, celsiusTemp);
@@ -25,9 +26,10 @@ public class TemperatureConverter {
         
         switch (units) {
             case Celsius:
-                return temperature * 9/5 + 32;
+                fahrenheitTemp = temperature * 9/5 + 32;
+                break;
             case Kelvin:
-                return (temperature - 273.15) * 9/5 + 32;
+                fahrenheitTemp = (temperature - 273.15) * 9/5 + 32;
         }
         
         return Double.max(MIN_FAHRENHEIT_TEMP, fahrenheitTemp);
@@ -38,9 +40,10 @@ public class TemperatureConverter {
         
         switch (units) {
             case Fahrenheit:
-                return (temperature - 32) * 5/9 + 273.15;
+                kelvinTemp = (temperature - 32) * 5/9 + 273.15;
+                break;
             case Celsius:
-                return temperature + 273.15;
+                kelvinTemp = temperature + 273.15;
         }
         
         return Double.max(MIN_KELVIN_TEMP, kelvinTemp);
