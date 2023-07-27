@@ -7,12 +7,10 @@ import static backendjavajunit.ej02.TemperatureConverter.Units;
 
 public class TemperatureConverterTest {
     
-    private static TemperatureConverter tc;
     private static double temperature;
     
     @BeforeClass
     public static void setUpClass() {
-        tc = new TemperatureConverter();
         temperature = 100.0;
     }
 
