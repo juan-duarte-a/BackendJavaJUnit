@@ -4,7 +4,7 @@ public class TemperatureConverter {
     
     public enum Units {Celsius, Fahrenheit, Kelvin}
     
-    public double calculateCelsius (double temperature, Units units) {
+    public static double calculateCelsius (double temperature, Units units) {
         double celsiusTemp = temperature;
         
         switch (units) {
@@ -17,7 +17,7 @@ public class TemperatureConverter {
         return celsiusTemp;
     }
     
-    public double calculateFahrenheit (double temperature, Units units) {
+    public static double calculateFahrenheit (double temperature, Units units) {
         double fahrenheitTemp = temperature;
         
         switch (units) {
@@ -30,7 +30,7 @@ public class TemperatureConverter {
         return fahrenheitTemp;
     }
     
-    public double calculateKelvin (double temperature, Units units) {
+    public static double calculateKelvin (double temperature, Units units) {
         double kelvinTemp = temperature;
         
         switch (units) {
